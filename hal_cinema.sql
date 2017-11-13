@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 2017 年 11 月 13 日 14:20
+-- Generation Time: 2017 年 11 月 13 日 14:27
 -- サーバのバージョン： 5.6.35
 -- PHP Version: 7.1.8
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hal_cinema`
 --
+CREATE DATABASE IF NOT EXISTS `hal_cinema` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `hal_cinema`;
 
 -- --------------------------------------------------------
 
