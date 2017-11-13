@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 2017 年 11 月 09 日 12:03
+-- Generation Time: 2017 年 11 月 13 日 14:20
 -- サーバのバージョン： 5.6.35
 -- PHP Version: 7.1.8
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hal_cinema`
 --
-CREATE DATABASE IF NOT EXISTS `hal_cinema` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `hal_cinema`;
 
 -- --------------------------------------------------------
 
@@ -231,12 +229,12 @@ CREATE TABLE `screens` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `theater`
+-- テーブルの構造 `theaters`
 --
 
-CREATE TABLE `theater` (
+CREATE TABLE `theaters` (
   `id` tinyint(2) NOT NULL,
-  `name` varchar(10) NOT NULL
+  `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -371,9 +369,9 @@ ALTER TABLE `screens`
   ADD KEY `theater_id` (`theater_id`);
 
 --
--- Indexes for table `theater`
+-- Indexes for table `theaters`
 --
-ALTER TABLE `theater`
+ALTER TABLE `theaters`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -460,11 +458,11 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT for table `screens`
 --
 ALTER TABLE `screens`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `theater`
+-- AUTO_INCREMENT for table `theaters`
 --
-ALTER TABLE `theater`
+ALTER TABLE `theaters`
   MODIFY `id` tinyint(2) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
@@ -499,7 +497,7 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `release_periods`
   ADD CONSTRAINT `release_periods_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`),
-  ADD CONSTRAINT `release_periods_ibfk_2` FOREIGN KEY (`theater_id`) REFERENCES `theater` (`id`);
+  ADD CONSTRAINT `release_periods_ibfk_2` FOREIGN KEY (`theater_id`) REFERENCES `theaters` (`id`);
 
 --
 -- テーブルの制約 `replies`
@@ -526,7 +524,7 @@ ALTER TABLE `schedules`
 -- テーブルの制約 `screens`
 --
 ALTER TABLE `screens`
-  ADD CONSTRAINT `screens_ibfk_1` FOREIGN KEY (`theater_id`) REFERENCES `theater` (`id`);
+  ADD CONSTRAINT `screens_ibfk_1` FOREIGN KEY (`theater_id`) REFERENCES `theaters` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
