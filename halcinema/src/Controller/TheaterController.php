@@ -5,9 +5,9 @@ use App\Utils\DataAccessObject;
 /**
  *IndexController
  */
-class HomeController extends AppController{
+class TheaterController extends AppController{
 	public function initialize(){
-		$this -> name = 'Home';
+		$this -> name = 'Theater';
 		$this -> autoRender = true;
 		$this -> viewBuilder() -> autoLayout(true);
 	}
@@ -15,10 +15,6 @@ class HomeController extends AppController{
 	// halcinema/
 	public function index(){
 		$dao = new DataAccessObject;
-
-		$slider = $dao->getSlider();
-
-		$this->set('slider', $slider);
 
 	}
 }
