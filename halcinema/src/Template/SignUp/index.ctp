@@ -1,3 +1,3 @@
-<div class="home">
-	<h1>SignUp</h1>
+<div class="signup">
+	会員登録フォーム
 </div>

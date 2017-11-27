@@ -1,3 +1,3 @@
 <div class="home">
-	<h1>Theater</h1>
+	劇場一覧
 </div>

@@ -1,3 +1,3 @@
 <div class="home">
-	<h1>Movie</h1>
+	上映中作品
 </div>

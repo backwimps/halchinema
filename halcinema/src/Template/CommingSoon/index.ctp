@@ -1,3 +1,3 @@
 <div class="home">
-	<h1>CommingSoon</h1>
+	公開予定作品
 </div>
