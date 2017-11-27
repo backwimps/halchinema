@@ -3,6 +3,6 @@
 namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
-class campaign extends Entity{
+class screen extends Entity{
 
 }

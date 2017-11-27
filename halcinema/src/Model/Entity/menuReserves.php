@@ -3,6 +3,6 @@
 namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
-class screens extends Entity{
+class menuReserve extends Entity{
 
 }
