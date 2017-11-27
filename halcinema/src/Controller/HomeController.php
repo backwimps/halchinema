@@ -17,8 +17,9 @@ class HomeController extends AppController{
 		$dao = new DataAccessObject;
 
 		$slider = $dao->getSlider();
+		$campaign = $dao->getCampaign();
 
 		$this->set('slider', $slider);
-
+		$this->set('campaign', $campaign);
 	}
 }

@@ -6,23 +6,28 @@ use Cake\ORM\Entity;
 class Slider extends Entity{
 
 	private $id;
-	private $name;
-	private $imgPath;
 
-	public function _setSlider($slide) {
-		$this->id = $slide['id'];
-		$this->name = '';
-		$this->imgPath = '';
+	private $movie_id;
+	private $movie_title;
+	private $movie_imagePath;
+
+	public function _setSlider($row) {
+		$this->id = $row['id'];
+
+		$this->mavie_id = $row['movie']['id'];
+		$this->movie_title = $row['movie']['title'];
+		$this->movie_imagePath = $row['movie']['imagePath'];
 	}
 
 	public function _getSlider() {
-		$slider = array(
+		$sliders = array(
 			'id' => $this->id,
-			'name' => $this->name,
-			'imgPath' => $this->imgPath
+			'movie_id' => $this->movie_id,
+			'movie_title' => $this->movie_title,
+			'movie_imagePath' => $this->movie_imagePath
 		);
 
-		return $slider;
+		return $sliders;
 	}
 
 }

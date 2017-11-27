@@ -29,7 +29,7 @@ class DataAccessObject
 
 	private $adminEntity;
 	private $campaignEntity;
-	private $classEntity;
+	// private $classEntity;
 	private $inquiryEntity;
 	private $inquiryCategoryEntity;
 	private $menuReserveEntity;
@@ -58,15 +58,39 @@ class DataAccessObject
 
 		$slideList = array();
 
-		$slider = $sliderTable->find()->limit(3);
+		$slider = $sliderTable->find()->limit(3)->contain('movies');
 
 		foreach ($slider as $row) {
-			// $this->sliderEntity->set('slider', $row);
-			// $slideList = $this->sliderEntity->get('slider');
+			$this->sliderEntity->set('slider', $row);
+			$slideList[] = $this->sliderEntity->get('slider');
 		}
 
-		return $slider;
+		return $slideList;
 	}
+
+	public function getCampaign() {
+		$campaignTable = TableRegistry::get('Campaigns');
+		$this->campaignEntity = new Campaign;
+
+		$campaignList = array();
+
+		$campaign = $campaignTable->find()->limit(3);
+
+		foreach ($campaign as $row) {
+			// print_r($row);
+			// $row['posting_time'] =
+			$this->campaignEntity->set('campaign', $row);
+			$campaignList[] = $this->campaignEntity->get('campaign');
+		}
+		// echo '<pre>';
+		// print_r($campaign);
+		// echo '</pre>';
+
+		return $campaignList;
+
+	}
+
+
 
 	// public function spotDetail($id){
 	// 	$spotTable = TableRegistry::get('Spots');
