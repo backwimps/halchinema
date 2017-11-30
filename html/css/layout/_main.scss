@@ -1,0 +1,224 @@
+
+@media screen and (min-width:786px){
+  .continer{
+    width: 100%;
+    padding: 20px;
+    background-color: #eee;
+    box-sizing: border-box;
+  }
+  .wrapper{
+    display: block;
+    max-width: 1240px;
+    min-width: 720px;
+    margin: 0 auto;
+  } 
+  
+  .local-nav{
+    display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      ul::after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+      ul li{
+        display: block;
+        float: left;
+        width: calc(100%/3);
+        text-align: center;
+        border-right: solid 1px #d4d4d4;
+        box-sizing: border-box;
+        &:last-child{
+          border-right:none;
+        }
+        a{
+          display: block;
+          width: 100%;
+          padding: 10px 0;
+          background-color: #fff;
+          border-bottom: solid 4px #d4d4d4;
+          &:hover{
+            color: #2c488a;
+            background-color: #efefef;
+            border-bottom: solid 4px #2c488a;
+          }
+        }
+      }
+    }
+  
+  /* Login */
+  .login{
+    display: block;
+    width:100%;
+    margin-bottom: 20px;
+    ul:after{
+      display: block;
+      clear: both;
+      content: "";
+    }
+    ul li{
+      display: block;
+      float: left;
+      width: 190px;
+      margin-right: 20px;
+      a{
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        border-radius: 10px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      &:first-child a{
+          background-color: #b71c1c;
+          color: #fff;
+      }
+        &:last-child a{
+          background-color: #fff;
+          border: solid 1px #b71c1c;
+          color:  #b71c1c;
+      }
+    }
+  }
+  
+  /* Ranking */
+  .ranking-area{
+    display: block;
+    h2{
+      margin-left: 20px;
+      padding: 0 10px;
+      border-left: solid 5px #b71c1c;
+    }
+  }
+  .ranking{
+      &:after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+      .ranking-item{
+        display: block;
+        float:left; 
+        width: 31%;
+        margin-top: 24px;
+        margin-right: 2%;
+        &:after{
+          margin-right: 0;
+        }
+        .ranking-image{
+          display: block;
+          width: 100%;
+        }
+        .ranking-text{
+          position: relative;
+          background-color: #fff;
+          margin-top: -2px;
+          padding: 8px;
+          padding-bottom: 12px;
+          &:after{
+            display:block;
+            clear: both;
+            content: "";
+          }
+          h2{
+            float: left;
+            padding-top:7px;
+            padding-left:8px;
+            border: none;
+          }
+        }
+      }
+    }
+  .inner-image{
+    width: 100%;
+    height: auto;
+  }
+
+  .infomation{
+    display: block;
+    margin-top:30px;
+    &:after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+    h2{
+      margin-left: 20px;
+      padding: 0 10px;
+      border-left: solid 5px #b71c1c; 
+    }
+    .info-item{
+        display: block;
+        float:left; 
+        width: 31%;
+        margin-top: 24px;
+        margin-right: 2%;
+        &:after{
+          margin-right: 0;
+        }
+      .info-image{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .info-text{
+    display: block;
+    background-color: #fff;
+    h2{
+      width: 35%;
+      padding: 8px;
+      margin-top: -2px;
+      margin-left: 0;
+      background-color: #f26060;
+      color: #fff;
+      border: none;
+      text-align: center;
+    }
+    p{
+      height: 71px;
+      padding: 8px;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .Import-Information{
+    display: block;
+    margin-top:30px;
+    h2{
+      margin-left: 20px;
+      padding: 0 10px;
+      border-left: solid 5px #b71c1c; 
+    }
+    ul{
+      width: 100%;
+      background-color: #fff;
+      margin-top: 12px;
+      padding: 14px 0;
+      padding-left: 14px;
+      
+      box-sizing: border-box;
+      li{
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+        a{
+          color: #f00;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+    
+  
+  
+  
+  
+}
