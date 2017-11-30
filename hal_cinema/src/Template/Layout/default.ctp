@@ -13,7 +13,7 @@
   <div class="header-logo">
     <h1><img src="images/logo.png"></h1>
   </div>
-</header
+</header>
 <?= $this->fetch('content') ?>
 <footer>
   <div class="footer-toppage">
