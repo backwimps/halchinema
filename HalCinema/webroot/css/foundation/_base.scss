@@ -1,0 +1,44 @@
+body{
+  font-family: Verdana,'游ゴシック体','Yu Gothic',YuGothic,sans-serif;
+}
+h2{
+  font-family: Verdana,'游ゴシック体','Yu Gothic',YuGothic,sans-serif;
+  font-weight: 400;
+}
+a{
+  text-decoration: none;
+  color: #424242;
+}
+ul,li{
+  list-style: none;
+}
+.fa_size{
+  font-size: 2em;
+}
+.rank_no{
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-size: 0.5em;
+}
+.left{
+  float: left;
+}
+
+
+.section-title-ja{
+  display: inline;
+  font-size: 20px;
+}
+.section-title-en{
+  display: block;
+  margin-top: 6px;
+  font-size: 16px;
+  color: #6d6d6d;
+}
+
+//文字色
+.color_rk1{color: #E29414}
+.color_rk2{color: #908D92}
+.color_rk3{color: #A7280E}
+.color_white{color:#fff}

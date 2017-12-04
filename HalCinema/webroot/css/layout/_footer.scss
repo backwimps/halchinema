@@ -1,0 +1,39 @@
+footer{
+  text-align: center;
+  .footer-toppage{
+    display: block;
+    width: 100%;
+    background-color: #373737;
+    text-align: center;
+    a{
+      display: block;
+      padding: 20px;
+      color: #fff;
+    }
+  }
+  ul{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #454545;
+    border-bottom: solid 1px #373737;
+    box-sizing: border-box;
+    li{
+      display: inline-block;
+      margin-right: 12px;
+      a{
+        color: #fff;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .footer-copyright{
+    display: block;
+    padding: 20px;
+    background-color: #454545;
+    color: #9d9d9d;
+    font-size: 0.8rem;
+    
+  }
+}
