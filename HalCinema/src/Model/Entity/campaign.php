@@ -5,10 +5,10 @@ use Cake\ORM\Entity;
 
 class Campaign extends Entity{
 
-	private $id;
-	private $title;
-	private $content;
-	private $postiong_time;
+	public $id;
+	public $title;
+	public $content;
+	public $postiong_time;
 
 	public function _setCampaign($row){
 		$this->id = $row['id'];

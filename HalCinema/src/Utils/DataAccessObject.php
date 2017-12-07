@@ -52,88 +52,49 @@ class DataAccessObject
 		// $this->userEntity = new User;
 	}
 
-	public function getSlider() {
+	public function getSliders() {
+		$slideList = array();
 		$sliderTable = TableRegistry::get('Sliders');
 		$this->sliderEntity = new Slider;
-
-		$slideList = array();
 
 		$slider = $sliderTable->find()->limit(3)->contain('movies');
 
 		foreach ($slider as $row) {
 			$this->sliderEntity->set('slider', $row);
-			$slideList[] = $this->sliderEntity->get('slider');
+			$slideList[] = $this->sliderEntity;
 		}
 
 		return $slideList;
 	}
 
-	public function getCampaign() {
+	public function getCampaigns() {
+		$campaignList = array();
 		$campaignTable = TableRegistry::get('Campaigns');
 		$this->campaignEntity = new Campaign;
-
-		$campaignList = array();
 
 		$campaign = $campaignTable->find()->limit(3);
 
 		foreach ($campaign as $row) {
-			// print_r($row);
-			// $row['posting_time'] =
 			$this->campaignEntity->set('campaign', $row);
-			$campaignList[] = $this->campaignEntity->get('campaign');
+			$campaignList[] = $this->campaignEntity;
 		}
-		// echo '<pre>';
-		// print_r($campaign);
-		// echo '</pre>';
 
 		return $campaignList;
-
 	}
 
+    // getterを使用しないver.(obj)
+	public function getNews() {
+		$newsList = array();
+		$newsTable = TableRegistry::get('News');
+		$this->newsEntity = new News;
 
+		$news = $newsTable->find()->limit(3);
 
-	// public function spotDetail($id){
-	// 	$spotTable = TableRegistry::get('Spots');
-    //
-	// 	$spot = $spotTable
-	// 	->find()
-	// 	->where(['id =' => $id]);
-    //
-	// 	foreach ($spot as $row) {
-	// 		$this->spotEntity->set('spot', $row);
-	// 		$detail = $this->spotEntity->get('spot');
-	// 	}
-	// 	return $detail;
-	// }
-    //
-	// public function spotArticles($id){
-	// 	$article = TableRegistry::get('Articles');
-    //
-	// 	$arts = array();
-    //
-	// 	$art = $article->find()->where(['articles.spot_id =' => $id])->contain(['Users']);
-    //
-	// 	foreach ($art as $row) {
-	// 		$this->artEntity->set('article',$row);
-	// 		$this->userEntity->set('name',$row['users']['nickname']);
-	// 		$arts[] = array_merge($this->artEntity->get('article'), array('name' => $this->userEntity->get('name')));
-	// 	}
-    //
-	// 	return $arts;
-	// }
-    //
-	// public function userArticles($id){
-	// 	$arts = array();
-	// 	$user = TableRegistry::get('Users');
-    //
-	// 	$art = $user
-	// 	->find()
-	// 	->where(['users.id =' => $id])
-	// 	->contain(['Articles']);
-    //
-	// 	foreach ($art as $row) {
-    //
-	// 	}
-	// 	return $art;
-	// }
+		foreach ($news as $row) {
+			$this->newsEntity->set('news', $row);
+			$newsList[] = $this->newsEntity;
+		}
+
+		return $newsList;
+	}
 }

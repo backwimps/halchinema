@@ -5,16 +5,14 @@ use Cake\ORM\Entity;
 
 class Slider extends Entity{
 
-	private $id;
-
-	private $movie_id;
-	private $movie_title;
-	private $movie_imagePath;
+	public $id;
+	public $movie_id;
+	public $movie_title;
+	public $movie_imagePath;
 
 	public function _setSlider($row) {
 		$this->id = $row['id'];
-
-		$this->mavie_id = $row['movie']['id'];
+		$this->movie_id = $row['movie_id'];
 		$this->movie_title = $row['movie']['title'];
 		$this->movie_imagePath = $row['movie']['imagePath'];
 	}

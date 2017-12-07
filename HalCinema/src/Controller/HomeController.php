@@ -16,10 +16,12 @@ class HomeController extends AppController{
 	public function index(){
 		$dao = new DataAccessObject;
 
-		$slider = $dao->getSlider();
-		$campaign = $dao->getCampaign();
+		$slider = $dao->getSliders();
+		$campaign = $dao->getCampaigns();
+		$news = $dao->getNews();
 
 		$this->set('slider', $slider);
 		$this->set('campaign', $campaign);
+		$this->set('news', $news);
 	}
 }
