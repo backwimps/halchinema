@@ -27,7 +27,7 @@ class SignUpController extends AppController{
             'gender' => $_POST['gender'],
             'birthday' => $_POST['year'].$_POST['month'].$_POST['day'],
             'mailAddress' => $_POST['mail'],
-            'password' => hash('md5',$_POST['pass'])
+            'password' => hash('sha256',$_POST['pass'])
         );
         
         $this-> loadModel('users');
@@ -37,7 +37,7 @@ class SignUpController extends AppController{
         $dao->createuser($entity); 
         
         $this->redirect(
-        ['controller' => 'Mypage', 'action' => 'index']
+        ['controller' => 'MyPage', 'action' => 'index']
         );
         return;
             
