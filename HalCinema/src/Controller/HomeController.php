@@ -1,9 +1,13 @@
 <?php
 namespace App\Controller;
 use App\Utils\Session;
-use App\Utils\DataAccessObject;
+use Cake\ORM\TableRegistry;
+// use App\Model\Entity\Slider;
+// use App\Model\Entity\Movie;
+// use App\Model\Entity\Campaign;
+// use App\Model\Entity\News;
 /**
- *IndexController
+ *HomeController
  */
 class HomeController extends AppController{
 	public function initialize(){
@@ -14,14 +18,21 @@ class HomeController extends AppController{
 
 	// halcinema/
 	public function index(){
-		$dao = new DataAccessObject;
+		// $dao = new DataAccessObject;
 
-		$slider = $dao->getSliders();
-		$campaign = $dao->getCampaigns();
-		$news = $dao->getNews();
+		$sliderTable = TableRegistry::get('Sliders');
+		$movieTable = TableRegistry::get('Movies');
+		$campaignTable = TableRegistry::get('Campaigns');
+		$newsTable = TableRegistry::get('News');
 
-		$this->set('slider', $slider);
-		$this->set('campaign', $campaign);
+		$sliders = $sliderTable->find()->limit(3)->contain('movies');
+		$newMovies = $movieTable->find()->order('releaseDate DESC')->limit(3);
+		$campaigns = $campaignTable->find()->limit(3);
+		$news = $newsTable->find()->limit(4);
+
+		$this->set('sliders', $sliders);
+		$this->set('newMovies', $newMovies);
+		$this->set('campaigns', $campaigns);
 		$this->set('news', $news);
 	}
 }
