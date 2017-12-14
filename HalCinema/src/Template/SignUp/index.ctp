@@ -1,12 +1,13 @@
+<main>
 <div class="signup">
-	
+<form action="./signup/excute" method="post">
 <h1>会員登録</h1>
 <p>※は必須項目です。</p>
 <ul>
     <dl>
         <dt>名前：</dt>
         <dd>
-            ※<input type="text" size="40" name="InputText1" placeholder="例）シネマ　太郎">
+            ※<input type="text" size="40" name="name" placeholder="例）シネマ　太郎">
         </dd>
     </dl>
     
@@ -14,9 +15,9 @@
     <dt>性別：</dt>
     <dd>
         <div class="radiobutton">
-            <input type="radio" name="s2" id="on" value="1" checked="">
+            <input type="radio" name="gender" id="on" value="0" checked="">
             <label for="on" class="switch-on">男</label>
-            <input type="radio" name="s2" id="off" value="0">
+            <input type="radio" name="gender" id="off" value="1">
             <label for="off" class="switch-off">女</label>
         </div>
     </dd>
@@ -29,25 +30,6 @@
     <div class="sl"><span>※</span>
 <select name="year">
 <option value="">選択</option>
-    <option value="1930">1930</option>
-    <option value="1931">1931</option>
-    <option value="1932">1932</option>
-    <option value="1933">1933</option>
-    <option value="1934">1934</option>
-    <option value="1935">1935</option>
-    <option value="1936">1936</option>
-    <option value="1937">1937</option>
-    <option value="1938">1938</option>
-    <option value="1939">1939</option>
-    <option value="1940">1940</option>
-    <option value="1941">1941</option>
-    <option value="1942">1942</option>
-    <option value="1943">1943</option>
-    <option value="1944">1944</option>
-    <option value="1945">1945</option>
-    <option value="1946">1946</option>
-    <option value="1947">1947</option>
-    <option value="1948">1948</option>
 <option value="1949">1949</option>
 <option value="1950">1950</option>
 <option value="1951">1951</option>
@@ -99,26 +81,6 @@
 <option value="1997">1997</option>
 <option value="1998">1998</option>
 <option value="1999">1999</option>
-<option value="2000">2000</option>
-<option value="2001">2001</option>
-<option value="2002">2002</option>
-<option value="2003">2003</option>
-<option value="2004">2004</option>
-<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-<option value="2019">2019</option>
 </select>　年
     
 <select name="month">
@@ -177,14 +139,14 @@
 <dl>
     <dt>メールアドレス：</dt>
     <dd>
-        ※<input type="text" size="40" placeholder="abc@halcinemas.co.jp">
+        ※<input type="text" size="40" placeholder="abc@halcinemas.co.jp" name="mail">
     </dd>
 </dl>
 
 <dl>
     <dt>パスワード：</dt>
     <dd>
-        ※<input type="password" size="40" placeholder="半角英数字 8～20文字以内">
+        ※<input type="password" size="40" placeholder="半角英数字 8～20文字以内" name="pass">
     </dd>
 </dl>
     
@@ -201,6 +163,7 @@
     
 </ul>
     
-    
+</form>
 
 </div>
+</main>

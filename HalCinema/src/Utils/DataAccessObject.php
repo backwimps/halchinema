@@ -97,4 +97,15 @@ class DataAccessObject
 
 		return $newsList;
 	}
+    
+    public function createUser($user){
+        $userTable = TableRegistry::get('users');
+        if($userTable->save($user)){
+          
+        }else{
+          echo '失敗';
+        }
+        
+        
+    }
 }
