@@ -22,12 +22,25 @@ class LoginController extends AppController{
 		// $dao =  new DataAccessObject;
         $this -> autoRender = false;
         $mailAddress = $_POST['mail'];
-        $password = hash('sha256',$_POST['pass']);
+        $password = $_POST['pass'];
         
-        $user = new Auth($mailAddress,$password);
+        $auth = new Auth($mailAddress,$password);
         
-        $this->redirect(
-        ['controller' => 'Mypage', 'action' => 'index']
-        );
+        $result = $auth->userAuth();
+        
+        if($result['flg']){
+            $this->redirect(
+                ['controller' => 'Mypage', 'action' => 'index']
+
+            );
+            return;
+        }
+        else{
+            $this->redirect(
+                ['controller' => 'Login', 'action' => 'index']
+
+            );
+        }
+        
     }
 }
