@@ -41,6 +41,7 @@ class Auth
 
 		$user = $this->userTable->find()->where(['mailAddress =' => $this->mailaddress]);
 
+
 		foreach ($user as $row) {
 			if($row['password'] == hash('sha256',$this->password)){
 				//認証
@@ -50,12 +51,15 @@ class Auth
 			}else if(!empty($row)){
 				//password不一致
 				$auth['miss'] = true;
+             
+                
 			}
 		}
-        
+       
 		//addressが存在しない時
 		if(!$auth['flg'] && !$auth['miss']){
 			$auth['empty'] = true;
+           
 		}
 		return $auth;
 	}
