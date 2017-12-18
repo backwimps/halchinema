@@ -237,11 +237,46 @@
     padding: 12px 0;
     text-align: center;
   }
+  ul{
+    display: block;
+    width: 100%;
+    border-right: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    background-color: #d4d4d4;
+    text-align: center;
+    box-sizing: border-box;
+    &::after{
+    display: block;
+    clear: both;
+    content: "";
+    }
+  }
+  li{
+    display: block;
+    float: left;
+    width: calc(100% / 7);
+    padding: 12px 12px;
+    border-right: solid 1px #ccc;
+    text-align: center;
+    background-color: #d4d4d4;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
 }
-
-
-
-
+.movie-day{
+  display: block;
+  width: 100%;
+  margin-top: 48px;
+  padding: 16px 0;
+  padding-left: 24px;
+  color: #454545;
+  background-color: #ccc;
+  box-sizing: border-box;
+  h3{
+    font-weight: bold;
+  }
+}
 
 
 //コンテントボックス
@@ -249,7 +284,7 @@
     display: block;
     margin-top:30px;
     margin-bottom: 56px;
-    &:after{
+    &::after{
         display: block;
         clear: both;
         content: "";
@@ -264,7 +299,10 @@
         float:left;
         width: 31%;
         margin-top: 24px;
-        margin-right: 2%;
+        margin-right: 3.5%;
+        &:nth-child(3n){
+          margin-right: 0;
+        }
         &:after{
           margin-right: 0;
         }
@@ -288,5 +326,51 @@
       box-sizing: border-box;
     }
   }
+}
 
+.comingsoon{
+  display: block;
+  margin-top:30px;
+  margin-bottom: 56px;
+  &::after{
+      display: block;
+      clear: both;
+      content: "";
+    }
+  h2{
+    margin-left: 20px;
+    padding: 0 10px;
+    border-left: solid 5px #b71c1c;
+  }
+  .content-item{
+      display: block;
+      float:left;
+      width: 31%;
+      margin-top: 24px;
+      margin-right: 3.5%;
+      &:nth-child(3n+1){
+        margin-right: 0;
+      }
+      &:after{
+        margin-right: 0;
+      }
+    .content-image{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.content-box::after{
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.content-box{
+  &:after{
+    display: block;
+    clear: both;
+    content: "";
+  }
 }
