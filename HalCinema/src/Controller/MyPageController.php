@@ -17,6 +17,4 @@ class MyPageController extends AppController{
 		// $dao = new DataAccessObject;
 
 	}
-    
-    
 }

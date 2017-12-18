@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use App\Utils\Auth;
+use App\Utils\Session;
 use App\Utils\DataAccessObject;
 /**
  *IndexController
@@ -17,30 +17,4 @@ class LoginController extends AppController{
 		// $dao = new DataAccessObject;
 
 	}
-    
-    public function excute(){
-		// $dao =  new DataAccessObject;
-        $this -> autoRender = false;
-        $mailAddress = $_POST['mail'];
-        $password = $_POST['pass'];
-        
-        $auth = new Auth($mailAddress,$password);
-        
-        $result = $auth->userAuth();
-        
-        if($result['flg']){
-            $this->redirect(
-                ['controller' => 'Mypage', 'action' => 'index']
-
-            );
-            return;
-        }
-        else{
-            $this->redirect(
-                ['controller' => 'Login', 'action' => 'index']
-
-            );
-        }
-        
-    }
 }

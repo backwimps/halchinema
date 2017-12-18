@@ -14,8 +14,8 @@
 		<!-- Login -->
 		<div class="login">
 			<ul>
-				<li class="login-item-button"><a href="./Login">ログイン</a></li>
-				<li class="login-item-button"><a href="./SignUp">新規会員登録</a></li>
+				<li class="login-item-button"><a href="#">ログイン</a></li>
+				<li class="login-item-button"><a href="#">新規会員登録</a></li>
 			</ul>
 		</div>
 

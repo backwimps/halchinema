@@ -10,15 +10,15 @@ use App\Model\Entity\User;
 class Auth
 {
 	private $id;
-	private $nickname;
-	private $mailaddress;
+	private $name;
+	private $address;
 	private $password;
 	private $userEntity;
 	private $userTable;
 
-	function __construct($mailaddress, $password){
+	function __construct($address, $password){
 		$this->userEntity = new User;
-		$this->mailaddress = $mailaddress;
+		$this->address = $address;
 		$this->password = $password;
 	}
 
@@ -36,31 +36,27 @@ class Auth
 			'authority' => 2
 		);
 
-//		$savedPassword = '';
+		$savedPassword = '';
 		$this->userTable = TableRegistry::get('Users');
 
-		$user = $this->userTable->find()->where(['mailAddress =' => $this->mailaddress]);
-
+		$user = $this->userTable->find()->where(['mailAddress =' => $this->address]);
 
 		foreach ($user as $row) {
 			if($row['password'] == hash('sha256',$this->password)){
 				//認証
 				$auth['flg'] = true;
 				$this->id = $row['id'];
-				$this->nickname = $row['nickname'];
+				$this->name = $row['nickname'];
 			}else if(!empty($row)){
 				//password不一致
 				$auth['miss'] = true;
-             
-                
 			}
 		}
-       
 		//addressが存在しない時
 		if(!$auth['flg'] && !$auth['miss']){
 			$auth['empty'] = true;
-           
 		}
+
 		return $auth;
 	}
 

@@ -506,7 +506,92 @@ footer .footer-copyright {
   .Import-Information ul li:last-child {
     margin-bottom: 0;
   }
+
+  .comingsoon {
+    display: block;
+    margin-top: 30px;
+  }
+  .comingsoon:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  .comingsoon h2 {
+    margin-left: 20px;
+    padding: 0 10px;
+    border-left: solid 5px #b71c1c;
+  }
+
+  .schedule-coming h3 {
+    width: 100%;
+    margin-top: 23px;
+    color: #fff;
+    background-color: #454545;
+    padding: 12px 0;
+    text-align: center;
+  }
+
+  .content {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 56px;
+  }
+  .content:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  .content h2 {
+    margin-left: 20px;
+    padding: 0 10px;
+    border-left: solid 5px #b71c1c;
+  }
+  .content .content-item {
+    display: block;
+    float: left;
+    width: 31%;
+    margin-top: 24px;
+    margin-right: 2%;
+  }
+  .content .content-item:after {
+    margin-right: 0;
+  }
+  .content .content-item .content-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .content-text {
+    display: block;
+    background-color: #fff;
+    margin-top: -2px;
+    text-align: center;
+  }
+  .content-text p {
+    width: 100%;
+    text-align: center;
+    padding: 24px 12px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+  }
 }
+.link-button {
+  display: block;
+  width: 760px;
+  margin: 0 auto;
+  background-color: #2c488a;
+  margin-bottom: 32px;
+}
+.link-button p a {
+  display: block;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #fff;
+}
+
 .text-slender {
   font-size: 8px;
   font-weight: 400;

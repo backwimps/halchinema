@@ -11,8 +11,8 @@
     max-width: 1240px;
     min-width: 720px;
     margin: 0 auto;
-  } 
-  
+  }
+
   .local-nav{
     display: block;
       width: 100%;
@@ -46,7 +46,7 @@
         }
       }
     }
-  
+
   /* Login */
   .login{
     display: block;
@@ -81,7 +81,7 @@
       }
     }
   }
-  
+
   /* Ranking */
   .ranking-area{
     display: block;
@@ -99,7 +99,7 @@
       }
       .ranking-item{
         display: block;
-        float:left; 
+        float:left;
         width: 31%;
         margin-top: 24px;
         margin-right: 2%;
@@ -146,11 +146,11 @@
     h2{
       margin-left: 20px;
       padding: 0 10px;
-      border-left: solid 5px #b71c1c; 
+      border-left: solid 5px #b71c1c;
     }
     .info-item{
         display: block;
-        float:left; 
+        float:left;
         width: 31%;
         margin-top: 24px;
         margin-right: 2%;
@@ -183,14 +183,14 @@
       font-size: 1.2rem;
     }
   }
-  
+
   .Import-Information{
     display: block;
     margin-top:30px;
     h2{
       margin-left: 20px;
       padding: 0 10px;
-      border-left: solid 5px #b71c1c; 
+      border-left: solid 5px #b71c1c;
     }
     ul{
       width: 100%;
@@ -198,7 +198,6 @@
       margin-top: 12px;
       padding: 14px 0;
       padding-left: 14px;
-      
       box-sizing: border-box;
       li{
         margin-bottom: 12px;
@@ -208,17 +207,86 @@
         }
         &:last-child{
           margin-bottom: 0;
+
         }
       }
     }
   }
-  
-  
-  
-  
-    
-  
-  
-  
-  
+
+//Comingsoon
+.comingsoon{
+  display: block;
+  margin-top:30px;
+  &:after{
+      display: block;
+      clear: both;
+      content: "";
+    }
+  h2{
+    margin-left: 20px;
+    padding: 0 10px;
+    border-left: solid 5px #b71c1c;
+  }
+}
+.schedule-coming{
+  h3{
+    width: 100%;
+    margin-top: 23px;
+    color: #fff;
+    background-color: #454545;
+    padding: 12px 0;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+//コンテントボックス
+  .content{
+    display: block;
+    margin-top:30px;
+    margin-bottom: 56px;
+    &:after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+    h2{
+      margin-left: 20px;
+      padding: 0 10px;
+      border-left: solid 5px #b71c1c;
+    }
+    .content-item{
+        display: block;
+        float:left;
+        width: 31%;
+        margin-top: 24px;
+        margin-right: 2%;
+        &:after{
+          margin-right: 0;
+        }
+      .content-image{
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .content-text{
+    display: block;
+    background-color: #fff;
+    margin-top: -2px;
+    text-align: center;
+    p{
+      width: 100%;
+      text-align: center;
+      padding: 24px 12px;
+      font-size: 1.2rem;
+      box-sizing: border-box;
+    }
+  }
+
 }

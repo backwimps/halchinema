@@ -46,12 +46,9 @@ class DataAccessObject
 	private $theaterEntity;
 	private $userEntity;
 
-	function __construct(){
-		// $this->spotEntity = new Spot;
-		// $this->artEntity = new Article;
-		// $this->userEntity = new User;
-	}
+	function __construct(){}
 
+    // スライダー３件取得
 	public function getSliders() {
 		$slideList = array();
 		$sliderTable = TableRegistry::get('Sliders');
@@ -61,12 +58,32 @@ class DataAccessObject
 
 		foreach ($slider as $row) {
 			$this->sliderEntity->set('slider', $row);
-			$slideList[] = $this->sliderEntity;
+			$slideList[] = $this->sliderEntity->get('slider');
 		}
 
 		return $slideList;
 	}
 
+    // 新作映画３件取得
+	public function getNewMovies() {
+		$newMovies = array();
+		$movieTable = TableRegistry::get('Movies');
+		$this->movieEntity = new Movie;
+
+		$movies = $movieTable->find()->order('releaseDate DESC')->limit(3);
+
+		foreach ($movies as $row) {
+			$this->movieEntity->set('newMovie', $row);
+			$newMovies[] = $this->movieEntity->get('newMovie');
+			echo '<pre>';
+			print_r($this->movieEntity->get('newMovie'));
+			echo '</pre>';
+		}
+
+		return $newMovies;
+	}
+
+    // 最新キャンペーン３件取得
 	public function getCampaigns() {
 		$campaignList = array();
 		$campaignTable = TableRegistry::get('Campaigns');
@@ -76,13 +93,13 @@ class DataAccessObject
 
 		foreach ($campaign as $row) {
 			$this->campaignEntity->set('campaign', $row);
-			$campaignList[] = $this->campaignEntity;
+			$campaignList[] = $this->campaignEntity->get('campaign');
 		}
 
 		return $campaignList;
 	}
 
-    // getterを使用しないver.(obj)
+    // お知らせ３件取得
 	public function getNews() {
 		$newsList = array();
 		$newsTable = TableRegistry::get('News');
@@ -92,20 +109,9 @@ class DataAccessObject
 
 		foreach ($news as $row) {
 			$this->newsEntity->set('news', $row);
-			$newsList[] = $this->newsEntity;
+			$newsList[] = $this->newsEntity->get('news');
 		}
 
 		return $newsList;
 	}
-    
-    public function createUser($user){
-        $userTable = TableRegistry::get('users');
-        if($userTable->save($user)){
-          
-        }else{
-          echo '失敗';
-        }
-        
-        
-    }
 }
