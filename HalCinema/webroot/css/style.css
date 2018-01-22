@@ -530,13 +530,53 @@ footer .footer-copyright {
     padding: 12px 0;
     text-align: center;
   }
+  .schedule-coming ul {
+    display: block;
+    width: 100%;
+    border-right: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    background-color: #d4d4d4;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .schedule-coming ul::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  .schedule-coming li {
+    display: block;
+    float: left;
+    width: calc(100% / 7);
+    padding: 12px 12px;
+    border-right: solid 1px #ccc;
+    text-align: center;
+    background-color: #d4d4d4;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+
+  .movie-day {
+    display: block;
+    width: 100%;
+    margin-top: 48px;
+    padding: 16px 0;
+    padding-left: 24px;
+    color: #454545;
+    background-color: #ccc;
+    box-sizing: border-box;
+  }
+  .movie-day h3 {
+    font-weight: bold;
+  }
 
   .content {
     display: block;
     margin-top: 30px;
     margin-bottom: 56px;
   }
-  .content:after {
+  .content::after {
     display: block;
     clear: both;
     content: "";
@@ -551,7 +591,10 @@ footer .footer-copyright {
     float: left;
     width: 31%;
     margin-top: 24px;
-    margin-right: 2%;
+    margin-right: 3.5%;
+  }
+  .content .content-item:nth-child(3n) {
+    margin-right: 0;
   }
   .content .content-item:after {
     margin-right: 0;
@@ -576,6 +619,52 @@ footer .footer-copyright {
     box-sizing: border-box;
   }
 }
+.comingsoon {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 56px;
+}
+.comingsoon::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.comingsoon h2 {
+  margin-left: 20px;
+  padding: 0 10px;
+  border-left: solid 5px #b71c1c;
+}
+.comingsoon .content-item {
+  display: block;
+  float: left;
+  width: 31%;
+  margin-top: 24px;
+  margin-right: 3.5%;
+}
+.comingsoon .content-item:nth-child(3n+1) {
+  margin-right: 0;
+}
+.comingsoon .content-item:after {
+  margin-right: 0;
+}
+.comingsoon .content-item .content-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content-box::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.content-box:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 .link-button {
   display: block;
   width: 760px;

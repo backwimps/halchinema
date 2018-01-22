@@ -5,8 +5,8 @@
 		<!-- local-nav -->
 		<div class="local-nav">
 			<ul>
-				<li><a href="#"><span>上映中<br><span class="text-slender">Now Playing</span></span></a></li>
-				<li><a href="#"><span>公開予定<br><span class="text-slender">Coming Soon</span></span></a></li>
+				<li><a href="<?php echo $this->Url->build("/",true); ?>Movie"><span>上映中<br><span class="text-slender">Now Playing</span></span></a></li>
+				<li><a href="<?php echo $this->Url->build("/",true); ?>CommingSoon"><span>公開予定<br><span class="text-slender">Coming Soon</span></span></a></li>
 				<li><a href="#"><span>劇場を探す<br><span class="text-slender">Theater List</span></span></a></li>
 			</ul>
 		</div><!-- /.local-nav -->

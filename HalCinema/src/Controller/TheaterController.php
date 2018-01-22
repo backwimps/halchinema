@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Utils\Session;
-use App\Utils\DataAccessObject;
+use Cake\ORM\TableRegistry;
 /**
  *IndexController
  */
@@ -14,7 +14,12 @@ class TheaterController extends AppController{
 
 	// halcinema/
 	public function index(){
-		// $dao = new DataAccessObject;
+
+		$theaterTable = TableRegistry::get('Theaters');
+
+		$theaters = $theaterTable->find();
+
+		$this->set('theaters', $theaters);
 
 	}
 }

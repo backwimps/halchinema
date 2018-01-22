@@ -10,9 +10,11 @@
 	<link rel="stylesheet" href="css/sanitize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/slider-pro.min.css">
+<?php if($this->name == 'Home'){ ?>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/jquery.sliderPro.min.js"></script>
+<?php } ?>
 </head>
 <body>
 	<header class="header">
@@ -27,7 +29,7 @@
 			</a>
 		</div>
 		<div class="header-logo">
-			<h1><img src="img/logo.png"></h1>
+			<h1><a href="<?php echo $this->Url->build("/",true); ?>"><img src="img/logo.png"></a></h1>
 		</div>
 	</header>
 
