@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Utils\Session;
-use App\Utils\DataAccessObject;
+use App\Utils\Auth;
 /**
  *IndexController
  */
@@ -14,7 +14,32 @@ class LoginController extends AppController{
 
 	// halcinema/
 	public function index(){
-		// $dao = new DataAccessObject;
 
 	}
+
+	public function excute(){
+        $this->autoRender = false;
+
+        $mailAddress = $_POST['mail'];
+        $password = $_POST['pass'];
+
+        $auth = new Auth($mailAddress,$password);
+
+        $result = $auth->userAuth();
+
+        if($result['flg']){
+            $this->redirect(
+                ['controller' => 'Mypage', 'action' => 'index']
+
+            );
+            return;
+        }
+
+        else{
+            $this->redirect(
+                ['controller' => 'Login', 'action' => 'index']
+            );
+        }
+
+    }
 }

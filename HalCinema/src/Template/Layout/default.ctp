@@ -5,16 +5,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>HAL CINEMA</title>
-	<link rel="stylesheet" href="css/font-awesome.css">
+	<?= $this->Html->css('font-awesome.css') ?>
+	<?= $this->Html->css('sanitize.css') ?>
+	<?= $this->Html->css('style.css') ?>
+	<?= $this->Html->css('slider-pro.min.css'); ?>
+
+	<!-- <link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/sanitize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/slider-pro.min.css">
-<?php if($this->name == 'Home'){ ?>
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="js/jquery.sliderPro.min.js"></script>
-<?php } ?>
+	<link rel="stylesheet" href="css/style.css"> -->
+
+	<?php echo $this->Html->script('jquery-1.11.0.min.js'); ?>
+	<?php if($this->name == 'Home'){ ?>
+
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+		<?php //echo $this->Html->script('jquery.sliderPro.min.js'); ?>
+	<?php } ?>
 </head>
 <body>
 	<header class="header">
@@ -29,7 +35,18 @@
 			</a>
 		</div>
 		<div class="header-logo">
-			<h1><a href="<?php echo $this->Url->build("/",true); ?>"><img src="img/logo.png"></a></h1>
+			<h1><?php
+			echo $this->html->link(
+				$this->Html->image('logo.png'),
+				array(
+					'Controller' => 'Home',
+					'action' => 'index'
+				),
+				array(
+					'escape' => false
+				)
+			); ?>
+		 </h1>
 		</div>
 	</header>
 
