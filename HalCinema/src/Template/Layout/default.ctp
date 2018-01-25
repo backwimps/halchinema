@@ -6,21 +6,19 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>HAL CINEMA</title>
 	<?= $this->Html->css('font-awesome.css') ?>
+
 	<?= $this->Html->css('sanitize.css') ?>
+
 	<?= $this->Html->css('style.css') ?>
+
 	<?= $this->Html->css('slider-pro.min.css'); ?>
 
-	<!-- <link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/sanitize.css">
-	<link rel="stylesheet" href="css/style.css"> -->
-
 	<?php echo $this->Html->script('jquery-1.11.0.min.js'); ?>
-	<?php if($this->name == 'Home'){ ?>
 
-		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-		<?php //echo $this->Html->script('jquery.sliderPro.min.js'); ?>
-	<?php } ?>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<?php if($this->name == 'Home'){ ?>
+	<?php echo $this->Html->script('jquery.sliderPro.min.js'); ?>
+<?php } ?>
 </head>
 <body>
 	<header class="header">
@@ -36,16 +34,19 @@
 		</div>
 		<div class="header-logo">
 			<h1><?php
-			echo $this->html->link(
-				$this->Html->image('logo.png'),
-				array(
-					'Controller' => 'Home',
-					'action' => 'index'
-				),
-				array(
-					'escape' => false
-				)
-			); ?>
+			echo $this->Html->image("logo.png", [
+				"alt" => "HalCinemaのロゴ",
+				'url' => ['controller' => 'Home', 'action' => 'index']
+			]);
+				// $this->Html->image('logo.png',
+				// 	array(
+				// 		'Controller' => 'Home',
+				// 		'action' => 'index'
+				// 	),
+				// 	array(
+				// 		'escape' => false
+				// 	));
+				 ?>
 		 </h1>
 		</div>
 	</header>

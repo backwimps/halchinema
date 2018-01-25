@@ -26,7 +26,7 @@
 			<div class="sp-slides">
 <?php foreach ($sliders as $row) { ?>
 				<div class="sp-slide">
-					<img class="sp-image" src="<?php echo 'img/movie/sumb/',$row->movie->imagePath; ?>">
+					<img class="sp-image" src="<?php echo $this->Url->build("/").'img/movie/sumb/',$row->movie->imagePath; ?>">
 				</div>
 <? } ?>
 			</div>
