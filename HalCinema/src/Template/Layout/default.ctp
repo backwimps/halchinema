@@ -15,7 +15,6 @@
 
 	<?php echo $this->Html->script('jquery-1.11.0.min.js'); ?>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <?php if($this->name == 'Home'){ ?>
 	<?php echo $this->Html->script('jquery.sliderPro.min.js'); ?>
 <?php } ?>
@@ -34,7 +33,17 @@
 		</div>
 		<div class="header-logo">
 			<h1><?php
-			echo $this->Html->image("logo.png", ["alt" => "HalCinemaのロゴ", 'url' => ['controller' => 'Home', 'action' => 'index']]);?></h1>
+			echo $this->html->link(
+				$this->Html->image('logo.png'),
+				array(
+					'Controller' => 'Home',
+					'action' => 'index'
+				),
+				array(
+					'escape' => false
+				)
+			); ?>
+		 </h1>
 		</div>
 	</header>
 
