@@ -33,16 +33,7 @@
 		</div>
 		<div class="header-logo">
 			<h1><?php
-			echo $this->html->link(
-				$this->Html->image('logo.png'),
-				array(
-					'Controller' => 'Home',
-					'action' => 'index'
-				),
-				array(
-					'escape' => false
-				)
-			); ?>
+			echo $this->Html->image("logo.png", ["alt" => "HalCinemaのロゴ",'url' => ['controller' => 'Home', 'action' => 'index']]);?>
 		 </h1>
 		</div>
 	</header>
