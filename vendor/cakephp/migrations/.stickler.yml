@@ -1,6 +1,0 @@
-linters:
-  phpcs:
-    standard: PSR2
-    extensions: '.php'
-files:
-  ignore: ['tests/bootstrap.php', 'tests/comparisons/*']
