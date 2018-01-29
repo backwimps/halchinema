@@ -43,7 +43,7 @@
 <?php $rank = 1; ?>
 <?php foreach ($newMovies as $row) { ?>
 				<div class="ranking-item">
-					<a href="#"><!-- 映画詳細 -->
+					<a href="./More/?id=<?php echo $row->id; ?>"><!-- 映画詳細 -->
 						<div class="ranking-image">
 							<img class="inner-image" src="<?php echo 'img/movie/sumb/',$row->imagePath;?>">
 						</div>
