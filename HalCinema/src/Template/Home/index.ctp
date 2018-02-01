@@ -5,8 +5,8 @@
 		<!-- local-nav -->
 		<div class="local-nav">
 			<ul>
-				<li><a href="<?php echo $this->Url->build("/",true); ?>Movie"><span>上映中<br><span class="text-slender">Now Playing</span></span></a></li>
-				<li><a href="<?php echo $this->Url->build("/",true); ?>CommingSoon"><span>公開予定<br><span class="text-slender">Coming Soon</span></span></a></li>
+				<li><a href="/GitHub/halchinema/HalCinema/Movie"><span>上映中<br><span class="text-slender">Now Playing</span></span></a></li>
+				<li><a href="/GitHub/halchinema/HalCinema/CommingSoon"><span>公開予定<br><span class="text-slender">Coming Soon</span></span></a></li>
 				<li><a href="#"><span>劇場を探す<br><span class="text-slender">Theater List</span></span></a></li>
 			</ul>
 		</div><!-- /.local-nav -->
@@ -14,8 +14,8 @@
 		<!-- Login -->
 		<div class="login">
 			<ul>
-				<li class="login-item-button"><a href="#">ログイン</a></li>
-				<li class="login-item-button"><a href="#">新規会員登録</a></li>
+				<li class="login-item-button"><a href="/GitHub/halchinema/HalCinema/Login">ログイン</a></li>
+				<li class="login-item-button"><a href="/GitHub/halchinema/HalCinema/SignUp">新規会員登録</a></li>
 			</ul>
 		</div>
 
@@ -43,7 +43,7 @@
 <?php $rank = 1; ?>
 <?php foreach ($newMovies as $row) { ?>
 				<div class="ranking-item">
-					<a href="./More/?id=<?php echo $row->id; ?>"><!-- 映画詳細 -->
+					<a href="/github/halchinema/HalCinema/Movie/More/?id=<?php echo $row->id; ?>"><!-- 映画詳細 -->
 						<div class="ranking-image">
 							<img class="inner-image" src="<?php echo 'img/movie/sumb/',$row->imagePath;?>">
 						</div>

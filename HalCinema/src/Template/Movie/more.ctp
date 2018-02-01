@@ -137,10 +137,23 @@
 			</ul>
 		</div>
 
-		<p class="link-commingsoon"><a href="Commingsoon.php">公開予定の作品はこちら</a></p>
-		<p class="link-theater"><a href="Theater.php">劇場一覧はこちら</a></p>
+		<p class="link-commingsoon"><a href="#">公開予定の作品はこちら</a></p>
+		<p class="link-theater"><a href="#">劇場一覧はこちら</a></p>
 	</div>
 </main>
+
+<!-- debug -->
+<pre><?php
+foreach($movie as $row){
+	print_r($row);
+}
+?></pre>
+
+<pre><?php
+foreach($schedules as $row){
+	print_r($row);
+}
+?></pre>
 
 <script>
 $('#sampleTab a').click(function (e) {

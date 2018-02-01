@@ -29,19 +29,19 @@ class MovieController extends AppController{
 		if(!isset($_GET['id'])){
 			// リダイレクト
 		}
-		$id = $_GET['id'];
+		$movieID = $_GET['id'];
 
 		$movieTable = TableRegistry::get('Movies');
 		$scheduleTable = TableRegistry::get('Schedules');
 
-		$movie = $movieTable->find()->where(['id =' => $id]);
+		$movie = $movieTable->find()->where(['id =' => $movieID]);
 
-        // Schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
+        // schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
 		$theaterID = 1;
+		$schedules = $scheduleTable->find()->where(['movie_id =' => $movieID])->order('start_datetime');
 
-
-
-		$this->set('movie',$movie);
+		$this->set('movie', $movie);
+		$this->set('schedules', $schedules);
 
 	}
 }

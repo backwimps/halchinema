@@ -10,6 +10,7 @@ class MyPageController extends AppController{
 		$this -> name = 'MyPage';
 		$this -> autoRender = true;
 		$this -> viewBuilder() -> autoLayout(true);
+		
 	}
 
 	// halcinema/
