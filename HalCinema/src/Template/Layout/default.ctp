@@ -17,6 +17,10 @@
 
 <?php if($this->name == 'Home'){ ?>
 	<?php echo $this->Html->script('jquery.sliderPro.min.js'); ?>
+<?php }else if($this->name == 'Reserve'){ ?>
+	<?= $this->Html->css('seat.css') ?>
+
+	<?php echo $this->Html->script('jquery.seat-charts.js'); ?>
 <?php } ?>
 </head>
 <body>

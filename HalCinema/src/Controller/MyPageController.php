@@ -17,4 +17,20 @@ class MyPageController extends AppController{
 		// $dao = new DataAccessObject;
 
 	}
+
+	public function password(){
+
+	}
+
+	public function ChangePassword(){
+
+	}
+
+	public function mailaddress(){
+
+	}
+
+	public function ChangeMailaddress(){
+
+	}
 }
