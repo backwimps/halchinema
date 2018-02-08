@@ -19,9 +19,6 @@
 			</ul>
 		</div>
 
-
-
-
 		<div class="slider-pro" id="slider">
 			<div class="sp-slides">
 <?php foreach ($sliders as $row) { ?>
