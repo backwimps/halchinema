@@ -1,5 +1,7 @@
 <?php
 namespace App\Controller;
+use Cake\ORM\Entity;
+use Cake\ORM\TableRegistry;
 
 class AdminUserController extends AppController{
 	public function initialize(){
