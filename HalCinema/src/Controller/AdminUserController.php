@@ -21,7 +21,7 @@ class AdminUserController extends AppController{
 	}
 
 	// ユーザ削除
-	public function delete(){
+	public function destroy(){
 
 	}
 

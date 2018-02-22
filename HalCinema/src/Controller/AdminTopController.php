@@ -10,7 +10,6 @@ class AdminTopController extends AppController{
 
 	// AdminTop
 	public function index(){
-		// $dao = new DataAccessObject;
 
 	}
 }

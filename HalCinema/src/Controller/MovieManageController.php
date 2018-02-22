@@ -14,93 +14,112 @@ class MovieManageController extends AppController{
 	public function index(){
 		$movieTable = TableRegistry::get('Movies');
 
-		$movies = $movieTable->find();
+		$movies = $movieTable->find()->where(['state =' => 0]);
 
 		$this->set('movies', $movies);
 	}
 
 	public function add(){
-		$movie_id = 2;
-		// $_POST['movie_id'];
 
-		$movieTable = TableRegistry::get('Movies');
-
-		$movie = $movieTable->find()->where(['id =' => $movie_id]);
-		foreach($movie as $row){
-			$movie = $row;
-		}
-
-		$this->set('movie', $movie);
 	}
 
 	public function addExecute(){
 		//入力チェック
 		// if(){}
 
-		// $_POST['movie_id'];
+		$this->loadModel('Movies');
+		$this->loadModel('ReleasePeriods');
 
-		$movieInfo = array(
-			'option_id' => 1,
-			'sound' => 1,
-			'title' => 'newTitle',
-			'content' => 'newContent',
-			'screeningTime' => 60,
-			'imagePath' => 'image.jpg'
+		// option_id
+		// 1: 2D, 2:3D, 3:4D
+		// sound
+		// 1: 日本語, 2: 字幕
+
+		$movie = array(
+			'option_id' => $_POST['option'],
+			'sound' => $_POST['sound'],
+			'title' => $_POST['title'],
+			'content' => $_POST['content'],
+			'screeningTime' => $_POST['time'],
+			'imagePath' => 'it.png',
+			'state' => 0,
 		);
 
-		// 変更箇所を追加していく
-		// $movieInfo['option_id'] = 'before_option_id';
-		// $movieInfo['sound'] = 'before_sound';
-		// $movieInfo['title'] = 'before_name';
-		// $movieInfo['content'] = 'before_content';
-		// $movieInfo['screeningTime'] = 'before_screeningTime';
+		$movie = $this->Movies->newEntity($movie);
 
-		$this->loadModel('Movies');
-		$entity = $this->Movies->newEntity($movieInfo);
+		$this->Movies->save($movie);
 
-		$this->Movies->save($entity);
+		$release = array(
+			'movie_id' => $movie->id,
+			'theater_id' => '1', //現段階では固定
+			'releaseDate' => $_POST['start_year'].'-'.$_POST['start_month'].'-'.$_POST['start_day'],
+			'last_day' => $_POST['end_year'].'-'.$_POST['end_month'].'-'.$_POST['end_day'],
+		);
+
+		$release = $this->ReleasePeriods->newEntity($release);
+
+		$this->ReleasePeriods->save($release);
+
+		$this->redirect([
+			'controller' => 'MovieManage',
+			'action' => 'index'
+		]);
+		return;
 	}
 
 	public function edit(){
+		$movie_id = $_GET['id'];
 
+		$movieTable = TableRegistry::get('Movies');
+
+		$movie = $movieTable->find()->where(['id =' => $movie_id])->first();
+
+		$this->set('movie', $movie);
 	}
 
 	public function editExecute(){
 		//入力チェック
 		// if(){}
 
-		$movie_id = 2;
-		// $_POST['movie_id'];
+		$movie_id = $_POST['id'];
 
 		$movieInfo = array(
 			'id' => $movie_id,
+			'option_id' => $_POST['option'],
+			'sound' => $_POST['sound'],
+			'title' => $_POST['title'],
+			'content' => $_POST['content'],
+			'screeningTime' => $_POST['time'],
+			'imagePath' => 'it.png'
 		);
-
-		// 変更箇所を追加していく
-		// $movieInfo['option_id'] = 'before_option_id';
-		// $movieInfo['sound'] = 'before_sound';
-		$movieInfo['title'] = 'before_name';
-		// $movieInfo['content'] = 'before_content';
-		// $movieInfo['screeningTime'] = 'before_screeningTime';
 
 		$this->loadModel('Movies');
 		$entity = $this->Movies->newEntity($movieInfo);
 
 		$this->Movies->save($entity);
+
+		$this->redirect([
+			'controller' => 'MovieManage',
+			'action' => 'index'
+		]);
+		return;
 	}
 
-	public function delete(){
-
-	}
-
-	public function deleteExecute(){
-		$movieInfo = array(
-			'id' => 11
+	public function destroy(){
+		$movie = array(
+			'id' => $_POST['id']
 		);
 
 		$this->loadModel('Movies');
-		$entity = $this->Movies->get($movieInfo);
 
-		$result = $this->Movies->delete($entity);
+		$entity = $this->Movies->get($movie);
+		$entity->state = 1;
+		$result = $this->Movies->save($entity);
+
+		$this->redirect([
+			'controller' => 'MovieManage',
+			'action' => 'index'
+		]);
+		return;
 	}
 }
