@@ -11,7 +11,6 @@ class ScheduleManageController extends AppController{
 		$this->viewBuilder()->autoLayout(true);
 	}
 
-	// halcinema/
 	public function index(){
 		$scheduleTable = TableRegistry::get('Schedules');
 
@@ -21,34 +20,38 @@ class ScheduleManageController extends AppController{
 		$this->set('schedules', $schedules);
 	}
 
-	public function add(){
+	public function create(){
+
+	}
+
+	public function store(){
+		$this->autoRender = true;
+
+		$schedule = array(
+			'movie_id' => $_POST['movie_id'],
+			'screen_id' => $_POST['screen_id'],
+			'start_datetime' => $_POST['start_year'].'-'.$_POST['start_month'].'-'.$_POST['start_day']
+		);
+
 		$this->loadModel('Schedules');
-		$entity = $this->Schedules->newEntity($schedule);
+		$schedule = $this->Schedules->newEntity($schedule);
 
-		$scheduleTable->save($entity);
+		$this->Schedules->save($schedule);
 	}
 
-	public function addExecute(){
-		$this->autoRender = true;
+	public function edit($id = null){
+		$this->loadModel('Schedules');
 
-
-
+		$entity = $this->Schedules->get($id);
 	}
 
-	public function edit(){
-
-	}
-
-	public function editExecute(){
+	public function update(){
 		$this->autoRender = true;
 
 	}
 
-	public function delete(){
 
-	}
-
-	public function deleteExecute(){
+	public function destroy(){
 		$this->autoRender = true;
 
 	}
