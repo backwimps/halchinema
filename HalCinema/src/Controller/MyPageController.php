@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
-use App\Utils\Session;
-use App\Utils\DataAccessObject;
+use Cake\ORM\Entity;
+use Cake\ORM\TableRegistry;
 /**
  *IndexController
  */
@@ -14,7 +14,18 @@ class MyPageController extends AppController{
 
 	// halcinema/
 	public function index(){
-		// $dao = new DataAccessObject;
+
+	}
+
+	public function password(){
+
+	}
+
+	public function passwordExecute(){
+
+	}
+
+	public function mailaddressExecute(){
 
 	}
 

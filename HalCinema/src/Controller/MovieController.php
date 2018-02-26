@@ -39,8 +39,6 @@ class MovieController extends AppController{
         // Schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
 		$theaterID = 1;
 
-
-
 		$this->set('movie',$movie);
 
 	}

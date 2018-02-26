@@ -14,7 +14,6 @@ class HomeController extends AppController{
 
 	// halcinema/
 	public function index(){
-
 		// table取得
 		$sliderTable = TableRegistry::get('Sliders');
 		$movieTable = TableRegistry::get('Movies');

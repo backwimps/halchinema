@@ -1,19 +1,15 @@
 <?php
 namespace App\Controller;
-use App\Utils\Session;
-/**
- *IndexController
- */
-class ReserveController extends AppController{
+
+class AdminTopController extends AppController{
 	public function initialize(){
-		$this -> name = 'Reserve';
+		$this -> name = 'AdminTop';
 		$this -> autoRender = true;
 		$this -> viewBuilder() -> autoLayout(true);
 	}
 
-	// halcinema/
+	// AdminTop
 	public function index(){
-		// $dao = new DataAccessObject;
 
 	}
 }

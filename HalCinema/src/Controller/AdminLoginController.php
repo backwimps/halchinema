@@ -1,19 +1,20 @@
 <?php
 namespace App\Controller;
-use App\Utils\Session;
-/**
- *IndexController
- */
-class ReserveController extends AppController{
+
+class AdminLoginController extends AppController{
 	public function initialize(){
-		$this -> name = 'Reserve';
+		$this -> name = 'AdminLogin';
 		$this -> autoRender = true;
 		$this -> viewBuilder() -> autoLayout(true);
 	}
 
-	// halcinema/
+	// 管理者ログインフォーム
 	public function index(){
-		// $dao = new DataAccessObject;
+
+	}
+
+	// 認証
+	public function execute(){
 
 	}
 }
