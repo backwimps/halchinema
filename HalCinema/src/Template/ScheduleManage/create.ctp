@@ -5,18 +5,18 @@
 		<div class="">
 			<p>title</p>
 			<select name="movie_id">
-				<option value="1">it</option>
-				<option value="2">mix</option>
+<?php foreach ($movies as $row) { ?>
+				<option value="<?php echo $row->id; ?>"><?php echo $row->title; ?></option>
+<?php } ?>
 			</select>
 		</div>
 
 		<div class="">
 			<p>スクリーン</p>
 			<select name="screen_id">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
+<?php foreach ($screens as $row) { ?>
+				<option value="<?php echo $row->screen_no; ?>"><?php echo $row->screen_no; ?></option>
+<?php } ?>
 			</select>
 		</div>
 
@@ -28,16 +28,19 @@
 			</select>
 
 			<select name="start_month">
-				<option value="1">1</option>
-				<option value="2">2</option>
+<?php for ($i=1; $i <= 12 ; $i++) { ?>
+				<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+<?php } ?>
 			</select>
 
 			<select name="start_day">
-				<option value="1">1</option>
-				<option value="2">2</option>
+<?php for ($i=1; $i <= 31 ; $i++) { ?>
+				<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+<?php } ?>
 			</select>
 		</div>
 
 		<input type="submit" name="" value="追加">
 	</form>
 </main>
+<pre><?php //foreach ($screens as $row) { print_r($row); } ?></pre>
