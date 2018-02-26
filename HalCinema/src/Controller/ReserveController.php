@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 use App\Utils\Session;
-use App\Utils\DataAccessObject;
 /**
  *IndexController
  */
