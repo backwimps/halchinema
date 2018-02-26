@@ -29,14 +29,15 @@ class MovieController extends AppController{
 		if(!isset($_GET['id'])){
 			// リダイレクト
 		}
+
 		$id = $_GET['id'];
 
 		$movieTable = TableRegistry::get('Movies');
 		$scheduleTable = TableRegistry::get('Schedules');
 
-		$movie = $movieTable->find()->where(['id =' => $id]);
+		$movie = $movieTable->find()->where(['id =' => $id])->first();
 
-        // Schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
+		// Schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
 		$theaterID = 1;
 
 		$this->set('movie',$movie);
