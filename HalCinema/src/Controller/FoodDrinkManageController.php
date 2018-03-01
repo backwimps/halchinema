@@ -15,7 +15,11 @@ class FoodDrinkManageontroller extends AppController{
 
 	}
 
-	public function add(){
+	public function create(){
+
+	}
+
+	public function store(){
 
 	}
 
@@ -23,7 +27,11 @@ class FoodDrinkManageontroller extends AppController{
 
 	}
 
-	public function delete(){
+	public function update(){
+
+	}
+
+	public function destroy(){
 
 	}
 }
