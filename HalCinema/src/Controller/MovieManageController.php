@@ -19,11 +19,11 @@ class MovieManageController extends AppController{
 		$this->set('movies', $movies);
 	}
 
-	public function add(){
+	public function create(){
 
 	}
 
-	public function addExecute(){
+	public function store(){
 		//入力チェック
 		// if(){}
 
@@ -77,7 +77,7 @@ class MovieManageController extends AppController{
 		$this->set('movie', $movie);
 	}
 
-	public function editExecute(){
+	public function update(){
 		//入力チェック
 		// if(){}
 
