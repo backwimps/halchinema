@@ -18,7 +18,7 @@ class MovieController extends AppController{
 
 		$movieTable = TableRegistry::get('Movies');
 
-		$newMovies = $movieTable->find()->contain('release_periods')->where(['releaseDate <' => $today])->where(['last_day >' => $today]);
+		$newMovies = $movieTable->find()->contain('release_periods')->where(['releaseDate <' => $today])->where(['last_day >' => $today])->where(['state =' => 0]);
 		//->order('releaseDate DESC');
 
 		$this->set('movie', $newMovies);
@@ -34,7 +34,7 @@ class MovieController extends AppController{
 		$movieTable = TableRegistry::get('Movies');
 		$scheduleTable = TableRegistry::get('Schedules');
 
-		$movie = $movieTable->find()->where(['id =' => $id]);
+		$movie = $movieTable->find()->where(['id =' => $id])->first();
 
         // Schedulesテーブルから上映を予定している劇場を取得(新宿のみ)
 		$theaterID = 1;

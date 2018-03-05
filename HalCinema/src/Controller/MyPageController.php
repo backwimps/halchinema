@@ -29,9 +29,9 @@ class MyPageController extends AppController{
 
 	}
 
-	public function password(){
-
-	}
+	// public function password(){
+	//
+	// }
 
 	public function ChangePassword(){
 

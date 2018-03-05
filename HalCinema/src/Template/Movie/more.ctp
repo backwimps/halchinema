@@ -14,16 +14,11 @@
 	        <div class="detail-boxA">
 				<?php echo $this->Html->image('movie/main/IT.png'); ?>
 	            <!-- <img src="images/image01.jpg" alt="映画タイトル" class="detail-img"> -->
-	            <p class="detail-title">ＩＴ／イット“それ”が見えたら、終わり。</p>
+	            <p class="detail-title"><?php echo h($movie->title); ?></p>
 	        </div>
 	        <div class="detail-boxB">
 	            <p class="detail-text">
-	                “それ”は、ある日突然現れる。<br>
-	                一見、平和で静かな田舎町を突如、恐怖が覆い尽くす。相次ぐ児童失踪事件。内気な少年ビルの弟も、ある大雨の日に外出し、通りにおびただしい血痕を残して消息を絶った。悲しみに暮れ、自分を責めるビルの前に、突如“それ”は現れる。“それ”を目撃して以来、恐怖にとり憑かれるビル。しかし、得体の知れない恐怖を抱えることになったのは、彼だけではなかった。不良少年たちにイジメの標的にされている子どもたちも“それ”に遭遇していた。自分の部屋、地下室、バスルーム、学校、図書館、そして町の中……何かに恐怖を感じる度に“それ”は、どこへでも姿を現す。<br><br>
-
-	                監督 アンディ・ムスキエティ<br>
-	                出演 ジェイデン・リーバハー、ビル・スカルスガルド、フィン・ウルフハード、ソフィア・リリス<br>
-	                [ＩＴ／イット“それ”が見えたら、終わり。  上映時間：135分 ]
+	               <?php echo h($movie->content); ?>
 	            </p>
 	        </div>
 	    </div>
@@ -101,9 +96,9 @@
 
 			<ul class="date-content">
 			    <li>
-			        <p class="time"><a href="#">11:00</a></p>
-			        <p class="time"><a href="#">13:00</a></p>
-			        <p class="time"><a href="#">15:00</a></p>
+			        <p class="time"><a href="/GitHub/halchinema/HalCinema/Reserve/">11:00</a></p>
+			        <p class="time"><a href="/GitHub/halchinema/HalCinema/Reserve/">13:00</a></p>
+			        <p class="time"><a href="/GitHub/halchinema/HalCinema/Reserve/">15:00</a></p>
 			    </li>
 			    <li class="hide">
 			        <p class="time"><a href="#">13:00</a></p>
@@ -192,3 +187,5 @@ $(function() {
 });
 
 </script>
+
+<pre><?php print_r($movie); ?></pre>
