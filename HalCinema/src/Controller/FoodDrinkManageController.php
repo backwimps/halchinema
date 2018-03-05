@@ -3,7 +3,7 @@ namespace App\Controller;
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
 
-class FoodDrinkManageontroller extends AppController{
+class FoodDrinkManageController extends AppController{
 	public function initialize(){
 		$this -> name = 'FoodDrinkManage';
 		$this -> autoRender = true;
