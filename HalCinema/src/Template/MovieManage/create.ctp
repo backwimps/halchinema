@@ -1,6 +1,6 @@
 <main>
 	<h1>MovieManage</h1>
-	<form action="./addExecute" method="post">
+	<form action="./Store" method="post">
 		<p><input type="text" name="title" placeholder="Title"></p>
 		<p><input type="text" name="option" placeholder="Option"></p>
 		<p><input type="text" name="sound" placeholder="Sound"></p>
